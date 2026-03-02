@@ -24,12 +24,6 @@ class BarcodeWidgetToBarcodeServiceBridge implements BarcodeWidgetToBarcodeServi
         $this->barcodeService = $barcodeService;
     }
 
-    /**
-     * @param string $text
-     * @param string|null $generatorPlugin
-     *
-     * @return \Generated\Shared\Transfer\BarcodeResponseTransfer
-     */
     public function generateBarcode(string $text, ?string $generatorPlugin = null): BarcodeResponseTransfer
     {
         return $this->barcodeService->generateBarcode($text, $generatorPlugin);

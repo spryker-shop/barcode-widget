@@ -12,9 +12,6 @@ use SprykerShop\Yves\BarcodeWidget\Dependency\Service\BarcodeWidgetToBarcodeServ
 
 class BarcodeWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\BarcodeWidget\Dependency\Service\BarcodeWidgetToBarcodeServiceInterface
-     */
     public function getBarcodeService(): BarcodeWidgetToBarcodeServiceInterface
     {
         return $this->getProvidedDependency(BarcodeWidgetDependencyProvider::SERVICE_BARCODE);

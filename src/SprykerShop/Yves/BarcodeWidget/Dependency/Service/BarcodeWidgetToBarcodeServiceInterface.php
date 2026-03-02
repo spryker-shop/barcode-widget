@@ -11,11 +11,5 @@ use Generated\Shared\Transfer\BarcodeResponseTransfer;
 
 interface BarcodeWidgetToBarcodeServiceInterface
 {
-    /**
-     * @param string $text
-     * @param string|null $generatorPlugin
-     *
-     * @return \Generated\Shared\Transfer\BarcodeResponseTransfer
-     */
     public function generateBarcode(string $text, ?string $generatorPlugin = null): BarcodeResponseTransfer;
 }

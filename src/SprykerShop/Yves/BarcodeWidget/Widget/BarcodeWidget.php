@@ -25,10 +25,6 @@ class BarcodeWidget extends AbstractWidget
      */
     protected const PARAMETER_ENCODING = 'encoding';
 
-    /**
-     * @param string $generationText
-     * @param string|null $barcodeGeneratorPlugin
-     */
     public function __construct(string $generationText, ?string $barcodeGeneratorPlugin = null)
     {
         $barcodeResponseTransfer = $this->getFactory()
@@ -39,37 +35,21 @@ class BarcodeWidget extends AbstractWidget
         $this->addEncodingParameter($barcodeResponseTransfer);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'BarcodeWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@BarcodeWidget/views/barcode/barcode.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\BarcodeResponseTransfer $barcodeResponseTransfer
-     *
-     * @return void
-     */
     protected function addCodeParameter(BarcodeResponseTransfer $barcodeResponseTransfer): void
     {
         $this->addParameter(static::PARAMETER_CODE, $barcodeResponseTransfer->getCode());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\BarcodeResponseTransfer $barcodeResponseTransfer
-     *
-     * @return void
-     */
     protected function addEncodingParameter(BarcodeResponseTransfer $barcodeResponseTransfer): void
     {
         $this->addParameter(static::PARAMETER_ENCODING, $barcodeResponseTransfer->getEncoding());
